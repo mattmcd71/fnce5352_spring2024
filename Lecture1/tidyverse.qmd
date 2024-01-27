@@ -5,15 +5,15 @@ format: revealjs
 editor: visual
 ---
 
----
+------------------------------------------------------------------------
 
 inspired by <https://github.com/michaellevy/tidyverse_talk/blob/master/tidyverse.md>
 
 ## What is the tidyverse?
 
-- R packages for data science
+-   R packages for data science
 
-- The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+-   The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
 
 ## Tidy data
 
@@ -33,13 +33,13 @@ Functions should be consistent and easily (human) readable
 
 ## Okay but really, what is it? {.smaller}
 
-- Suite of \~20 packages that provide consistent, user-friendly, smart-default tools to do most of what most people do in R.
+-   Suite of \~20 packages that provide consistent, user-friendly, smart-default tools to do most of what most people do in R.
 
-- <https://www.tidyverse.org/packages/>
+-   <https://www.tidyverse.org/packages/>
 
-- `install.packages(tidyverse)` installs all of the above packages.
+-   `install.packages(tidyverse)` installs all of the above packages.
 
-- `library(tidyverse)` attaches only the core packages.
+-   `library(tidyverse)` attaches only the core packages.
 
 ## Why tidyverse? {.smaller}
 
@@ -84,18 +84,14 @@ Functions should be consistent and easily (human) readable
 
 ## tibble {.smaller}
 
-
-
 Tibbles are a modern re-imagining of data frames.
 
 ```{r}
 library(tidyverse, quietly = T)
 ```
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="60%"}
-
 Tibbles print politely.
 
 ```{r}
@@ -103,18 +99,14 @@ Tibbles print politely.
 tdf = tibble(x = 1:1e4, y = rnorm(1e4))
 tdf
 ```
-
 :::
 
 ::: {.column width="40%"}
-
 -   Can customize print methods with `print(tdf, n = rows, width = cols)`
 
 -   Set default with `options(tibble.print_max = rows, tibble.width = cols)`
-
 :::
-
-::::
+:::
 
 ## Tibble defaults
 
@@ -163,16 +155,14 @@ sqrt(sum(1:8))
 
 Common data(frame) manipulation tasks.
 
-Four core "verbs": 
+Four core "verbs":
 
-- filter
-- select
-- arrange
-- group_by + summarize
+-   filter
+-   select
+-   arrange
+-   group_by + summarize
 
 We will cover in more detail in further classes
-
-
 
 ## joins {.smaller}
 
@@ -180,19 +170,19 @@ We will cover in more detail in further classes
 
 ```{r}
 #| echo: true
-t1 = tibble(alpha = letters[1:6], num = 1:6)
+t1 = tibble(alpha = c(letters[2:7],letters[11]), num = c(2:7,11))
 t2 = tibble(alpha = letters[4:10], num = 4:10)
 t3 <- full_join(t1, t2, by = "alpha", suffix = c("_t1", "_t2"))
 
-t3
+arrange(t3, alpha)
 ```
 
 ## Other Useful Packages
 
-- *ggplot2* - data visualization
-- *tidyr* - data reshaping
-- *stringr* - manipulating strings
-- *purrr* - programming + working with lists
+-   *ggplot2* - data visualization
+-   *tidyr* - data reshaping
+-   *stringr* - manipulating strings
+-   *purrr* - programming + working with lists
 
 ## What does "un-tidy" data mean? {.smaller}
 
@@ -229,5 +219,3 @@ who %>%
   theme_light() +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
 ```
-
-
