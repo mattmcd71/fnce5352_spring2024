@@ -1,7 +1,9 @@
 ---
 title: "Modeling With R and the Tidyverse"
 author: "Matthew McDonald"
-format: revealjs
+format: 
+  revealjs:
+    slide-number: true
 editor: visual
 ---
 
