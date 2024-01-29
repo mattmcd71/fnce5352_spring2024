@@ -68,8 +68,8 @@ Variable Rate: $$pmt = \frac{rate_{t}}{1 - (1 + rate_{t})^{-term_{t}}} * balance
 
 Day counting convention impacts the conversion of annual rate to monthly rate
 
-30/360: $$rate_{monthly}=rate_{annual} * (\frac{30}{360}) = \frac{rate_{annual}}{12}$$
+30/360: $$rate_{monthly}=rate_{annual} * \left(\frac{30}{360}\right) = \frac{rate_{annual}}{12}$$
 
-Actual/360: $$rate_{monthly}=rate_{annual} * (\frac{days\;in\;month}{360})$$
+Actual/360: $$rate_{monthly}=rate_{annual} * \left(\frac{days\;in\;month}{360}\right)$$
 
-Actual/Actual: $$rate_{monthly}=rate_{annual} * (\frac{days\;in\;month}{days\;in\;year})$$
+Actual/Actual: $$rate_{monthly}=rate_{annual} * \left(\frac{days\;in\;month}{days\;in\;year}\right)$$
