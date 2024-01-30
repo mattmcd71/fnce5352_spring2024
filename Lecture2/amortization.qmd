@@ -62,7 +62,7 @@ $$ending\;balance = baleop_{t} = balance_{t} - ppmt_{t} = balance_{t + 1} $$
 
 Constant Rate: $$pmt = \frac{rate}{1 - (1 + rate)^{-term_{0}}} * balance_{0}$$
 
-Variable Rate: $$pmt = \frac{rate_{t}}{1 - (1 + rate_{t})^{-term_{t}}} * balance_{t}$$
+Variable Rate: $$pmt_{t} = \frac{rate_{t}}{1 - (1 + rate_{t})^{-term_{t}}} * balance_{t}$$
 
 ## Day Counting Conventions {.smaller}
 
