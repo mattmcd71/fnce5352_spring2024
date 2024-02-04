@@ -34,17 +34,17 @@ editor: visual
 
 ## Excel Worksheet Functions
 
-- PMT
+-   PMT
 
-- IPMT
+-   IPMT
 
-- PPMT
+-   PPMT
 
-- FV
+-   FV
 
-- PV
+-   PV
 
-::: {.callout-note}
+::: callout-note
 Drag the equations down the Excel spreadsheet to fully amortize the loan
 :::
 

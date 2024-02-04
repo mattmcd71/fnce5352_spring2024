@@ -294,6 +294,7 @@ You can avoid this type of repetition by passing a set of mappings to `ggplot()`
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
   geom_point() + 
   geom_smooth()
+
 ```
 
 ## Layer-Specific Mappings {.smaller}
