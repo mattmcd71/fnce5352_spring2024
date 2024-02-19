@@ -40,26 +40,6 @@ Most of readr's functions are concerned with turning flat files into data frames
 
 - For hierarchical data: use **jsonlite** (by Jeroen Ooms) for json, and **xml2** for XML.
 
-## Fixing The IBM Data {.smaller}
-
-```{r}
-#| output-location: slide
-ibm <- read_csv('IBM.csv')
-ibm <- ibm %>% mutate(Date=as.Date(Date, format="%m/%d/%Y"))
-
-# spec(ibm)
-ibm <- read_csv('IBM.csv', 
-                col_types = list(Date = col_date(format="%m/%d/%Y"),
-                                  Open = col_double(),
-                                  High = col_double(),
-                                  Low = col_double(),
-                                  Close = col_double(),
-                                  `Adj Close` = col_double(),
-                                  Volume = col_double()))
-
-ibm %>% ggplot(aes(x=Date, y=Close)) + geom_line()
-```
-
 ## Tidy Data
 
 There are three interrelated rules which make a dataset tidy:
@@ -436,4 +416,24 @@ To create a date/time from this sort of input, use `make_date()` for dates, or `
 flights %>% 
   select(year, month, day, hour, minute) %>% 
   mutate(departure = make_datetime(year, month, day, hour, minute))
+```
+
+## Fixing The IBM Data {.smaller}
+
+```{r}
+#| output-location: slide
+ibm <- read_csv('IBM.csv')
+ibm <- ibm %>% mutate(Date=as.Date(Date, format="%m/%d/%Y"))
+
+# spec(ibm)
+ibm <- read_csv('IBM.csv', 
+                col_types = list(Date = col_date(format="%m/%d/%Y"),
+                                  Open = col_double(),
+                                  High = col_double(),
+                                  Low = col_double(),
+                                  Close = col_double(),
+                                  `Adj Close` = col_double(),
+                                  Volume = col_double()))
+
+ibm %>% ggplot(aes(x=Date, y=Close)) + geom_line()
 ```
