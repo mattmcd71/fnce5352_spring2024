@@ -241,7 +241,7 @@ trading_volume |>
 #| output-location: slide
 trading_volume |>
   ggplot(aes(x = lag(trading_volume), y = trading_volume)) +
-  geom_point() +
+  geom_point(alpha=0.1) +
   geom_abline(aes(intercept = 0, slope = 1),
     linetype = "dashed"
   ) +
